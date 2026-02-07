@@ -1,0 +1,8 @@
+/* Just Jazz — Main content area */
+
+.main {
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 1rem 1.25rem 1.5rem;
+}

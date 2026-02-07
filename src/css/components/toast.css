@@ -1,0 +1,47 @@
+/* Just Jazz — Toast */
+
+.toast-container {
+  position: fixed;
+  bottom: calc(var(--nav-height) + var(--now-playing-height) + var(--safe-bottom) + 1rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.toast {
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.toast-container--visible .toast {
+  animation: toast-in-out 2.5s ease forwards;
+}
+
+@keyframes toast-in-out {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  12% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  88% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}

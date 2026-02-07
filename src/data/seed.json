@@ -1,0 +1,533 @@
+[
+  {
+    "id": "f3c67c73-9879-4ec6-b75c-7e2bb5078ee3",
+    "name": "Etta James Style Blues & Soul Classics | Timeless Love Songs for Heart & Soul",
+    "youtubeId": "ng0qt92pRQw",
+    "genres": ["soul", "female vocalists", "etta james"],
+    "category": "blues"
+  },
+  {
+    "id": "1276d145-20b9-43c4-8ae9-15f2e7ff55bf",
+    "name": "Blues & Soul Inspirados em Etta James | Canções Atemporais de Amor, Desilusão e Força",
+    "youtubeId": "mHqin6uyw14",
+    "genres": ["soul", "female vocalists", "etta james"],
+    "category": "blues"
+  },
+  {
+    "id": "e99fd085-ecaf-40b9-97c7-2463a96f06ba",
+    "name": "Swinging Ducks: Hard Bop Jazz in the City",
+    "youtubeId": "erl_NwHLRMY",
+    "genres": ["hard bop", "cassino"],
+    "category": "jazz"
+  },
+  {
+    "id": "299fd085-ecaf-40b9-97c7-a463a96f06ba",
+    "name": "Gangster Ducks Jazz — Hard Bop Getaway Vibes",
+    "youtubeId": "Ug5Uq0cS4kg",
+    "genres": ["hard bop", "cassino"],
+    "category": "jazz"
+  },
+  {
+    "id": "3941ed083-ecaf-40b9-97c7-a463a96f06ba",
+    "name": "Gangster Ducks Swing – Hard Bop Jazz Nights",
+    "youtubeId": "VFKACDzPomI",
+    "genres": ["hard bop", "cassino"],
+    "category": "jazz"
+  },
+  {
+    "id": "199fd085-acaf-40b9-97c7-4463a96f06ba",
+    "name": "Swing Into the 1920s Vibes | Timeless Jazz Classics 🎷 | Gatsby Lounge",
+    "youtubeId": "sT2sUEiRCWo",
+    "genres": ["hard bop", "cassino"],
+    "category": "jazz"
+  },
+  {
+    "id": "18d84462-fd87-4161-a55b-a772dd7457a9",
+    "name": "Jazz Noir - Calm Jazz Music for Foggy Nights",
+    "youtubeId": "HA9YYaqfyrg",
+    "genres": ["raining & noir", "calm", "detective"],
+    "category": "jazz"
+  },
+  {
+    "id": "7f9e3e92-2187-4c98-a84f-4c44273b47cf",
+    "name": "Midnight Noir Jazz 1940s",
+    "youtubeId": "rCANq2Dd7Ck",
+    "genres": ["raining & noir", "calm", "detective"],
+    "category": "jazz"
+  },
+  {
+    "id": "e1dd48b7-66c3-4788-85d8-1b730129d3ae",
+    "name": "Noir Jazz Ambience 🎷 Empire of Sin background 🎶 Rainy Night in 1920s Chicago",
+    "youtubeId": "WPdzpAUEMtA",
+    "genres": ["raining & noir", "calm", "detective"],
+    "category": "jazz"
+  },
+  {
+    "id": "194b4b54-5f8b-42cd-9074-1c60ad70dde0",
+    "name": "Noir Ambience, Version 2 (Diner on a Rainy Night)",
+    "youtubeId": "vUHEGw-fqhA",
+    "genres": ["raining & noir", "calm", "detective", "ambience"],
+    "category": "jazz"
+  },
+  {
+    "id": "082876c1-44d9-468d-8532-0b398b19172c",
+    "name": "1940s Noir City Street",
+    "youtubeId": "N_mhGqxgtIo",
+    "genres": ["raining & noir", "calm", "detective", "ambience"],
+    "category": "jazz"
+  },
+  {
+    "id": "cb3aae11-383c-4f39-b737-5c8ef522f030",
+    "name": "Coffee shop 1940s",
+    "youtubeId": "CCU7Jujq1zA",
+    "genres": ["coffee shop", "50s", "cozy"],
+    "category": "jazz"
+  },
+  {
+    "id": "c6ce4c3c-d4c8-487a-877f-820613e6dc0f",
+    "name": "Vintage Café Jazz",
+    "youtubeId": "w3j6JIC1eYA",
+    "genres": ["coffee shop", "50s", "cozy"],
+    "category": "jazz"
+  },
+  {
+    "id": "769a3db3-a13c-411a-90b3-f607da7c7f09",
+    "name": "My Little Coffee Shop",
+    "youtubeId": "3NkXT8nNEm4",
+    "genres": ["coffee shop", "50s", "cozy"],
+    "category": "jazz"
+  },
+  {
+    "id": "dfc75504-0c13-4fe6-8270-37a2cde610f4",
+    "name": "Cozy Coffe Shop Morning Jazz",
+    "youtubeId": "V8AuOrVH5qI",
+    "genres": ["coffee shop", "50s", "cozy"],
+    "category": "jazz"
+  },
+  {
+    "id": "fbe26cc4-3797-48f8-a5a0-39f53babef96",
+    "name": "A BRIEF RESPITE — 1960s Spy Jazz Lounge",
+    "youtubeId": "vlz3SNZEZtg",
+    "genres": ["jazz lounge", "60s", "spy"],
+    "category": "jazz"
+  },
+  {
+    "id": "d9bec20d-1647-42fc-aab3-c4d7d39d0f7b",
+    "name": "The Spy Lounge UNDERCOVER, After Midnight ",
+    "youtubeId": "KgZZhVB_krY",
+    "genres": ["jazz lounge", "60s", "spy"],
+    "category": "jazz"
+  },
+  {
+    "id": "3bcf0d4c-9be8-4177-838f-a41a69111fbb",
+    "name": "SPY JAZZ | Focus & Drive | 1960s 70s Jazz | Deep Focus — THE MONTE CARLO BRIEFING",
+    "youtubeId": "p301atZee6U",
+    "genres": ["jazz lounge", "60s", "spy"],
+    "category": "jazz"
+  },
+  {
+    "id": "6e756131-1343-422e-a38a-0411144cda26",
+    "name": "1960s Spy Jazz Music for Work | Focus & Concentration Playlist — The Riviera Assignment",
+    "youtubeId": "psfgrwiwzMk",
+    "genres": ["jazz lounge", "60s", "spy"],
+    "category": "jazz"
+  },
+  {
+    "id": "69efb4b7-6fc2-40db-8d11-9998884e4ed2",
+    "name": "SHAKEN, NOT STIRRED—1960s Spy Lounge Chill Mix | Vintage Cocktail & Late-Night Ambience",
+    "youtubeId": "8olOK5VkaPo",
+    "genres": ["jazz lounge", "60s", "spy"],
+    "category": "jazz"
+  },
+  {
+    "id": "990762b6-e21f-48bd-b2e7-dc4e24dc14d8",
+    "name": "CALIFORNIA HOUR — 1960s Spy Jazz Lounge",
+    "youtubeId": "9DuzJZ2taDs",
+    "genres": ["jazz lounge", "60s", "spy"],
+    "category": "jazz"
+  },
+  {
+    "id": "2c5994d1-0290-44d9-9833-f8a93b17a70a",
+    "name": "DEPARTURE AT SUNSET — Sophisticated Spy Lounge | Vintage Riviera Aesthetics 1960s Spy Jazz Lounge",
+    "youtubeId": "GNvXpT_6QpU",
+    "genres": ["jazz lounge", "60s", "spy"],
+    "category": "jazz"
+  },
+  {
+    "id": "2d4c0b67-650e-4396-9876-59d2f67c2ff0",
+    "name": "ITALIAN HEIST LOUNGE — 1960s Spy Jazz • Retro Chill • Night Drive Mix • Cinematic Smooth Ambience",
+    "youtubeId": "LFtrvsz_reY",
+    "genres": ["jazz lounge", "60s", "spy"],
+    "category": "jazz"
+  },
+  {
+      "id": "d9e2a5b5-465f-47b5-821c-6332bac70ecf",
+      "name": "First Kiss in Manhattan 1940s Jazz",
+      "youtubeId": "E30QpR03fS8",
+      "genres": [
+        "intimate jazz"
+      ],
+      "category": "jazz"
+    },
+   {
+      "id": "x9e2a5b5-465f-47b5-321c-6332bac70eca",
+      "name": "Vintage Jazz Music | Late Night in Paris",
+      "youtubeId": "KH7PDmJ_aow",
+      "genres": [
+        "intimate jazz",
+        "late night"
+      ],
+      "category": "jazz"
+    },
+    {
+      "id": "f339ae78-ac54-4013-bf19-2873cd0e3e5b",
+      "name": "Songs between two hearts - 1940s Jazz",
+      "youtubeId": "l7NYJ45ROcY",
+      "genres": [
+        "intimate jazz"
+      ],
+      "category": "jazz"
+    },
+    {
+      "id": "5d0241dc-9b56-44db-b553-fb515bd12d9d",
+      "name": "Late Night in New York - 1940s Jazz",
+      "youtubeId": "LfWlzQEZfpA",
+      "genres": [
+        "intimate jazz",
+        "vintage",
+        "1940s",
+        "late night"
+      ],
+      "category": "jazz"
+    },
+    {
+      "id": "34f1d4c0-5c62-4e03-b9f1-61d7ed2b5263",
+      "name": "Long Distance, Late Nights - 1940s Jazz",
+      "youtubeId": "Iu4_nwuViKg",
+      "genres": [
+        "intimate jazz"
+      ],
+      "category": "jazz"
+    },
+    {
+      "id": "eb12137c-1108-4d8f-890d-0b853ba3694f",
+      "name": "maybe JAZZ is the answer – 1940s jazz",
+      "youtubeId": "wVcbEd3R-j4",
+      "genres": [
+        "intimate jazz"
+      ],
+      "category": "jazz"
+    },
+    {
+      "id": "4d711dce-98e2-42a4-98a9-6010bf0f7a18",
+      "name": "speakeasy in Manhattan - 1940s jazz",
+      "youtubeId": "5_Y_Dc1_ZVI",
+      "genres": [
+        "intimate jazz"
+      ],
+      "category": "jazz"
+    },
+    {
+      "id": "2b4f1312-892c-4f71-b4bd-56e224a7e8f1",
+      "name": "Romantic Night in Manhattan – 1940s Jazz",
+      "youtubeId": "xBA4BsVz0ws",
+      "genres": [
+        "intimate jazz"
+      ],
+      "category": "jazz"
+    },
+      {
+        "id": "7761bc51-f52b-4c30-b280-8eefcedf117c",
+        "name": "i say i’m fine' like a reflex – 1940s jazz",
+        "youtubeId": "SFYmiQ23v3Q",
+        "genres": ["intimate jazz"],
+        "category": "jazz"
+      },
+      {
+        "id": "e2b2a43d-00d2-44ee-a40e-e32e7688bae9",
+        "name": "Midnight in New York – 1940s Jazz",
+        "youtubeId": "0B0sEBcG8cQ",
+        "genres": ["intimate jazz"],
+        "category": "jazz"
+      },
+      {
+        "id": "7b428786-b5cb-453c-9d0b-e0133776cc4b",
+        "name": "low lights and better company - 1940s jazz",
+        "youtubeId": "8lkUbv7vRiM",
+        "genres": ["intimate jazz"],
+        "category": "jazz"
+      },
+      {
+        "id": "1b428786-b5cb-453c-9d0b-ee423776cc4b",
+        "name": "Late Night Vintage Jazz | Paris After Midnight",
+        "youtubeId": "pr1gkZd9so0",
+        "genres": ["intimate jazz","paris", "late night"],
+        "category": "jazz"
+      },
+      {
+        "id": "81d89c57-0b0b-4034-a9ab-9d2bd70d5196",
+        "name": "Intimate Jazz — rrvioMv2W5Q",
+        "youtubeId": "rrvioMv2W5Q",
+        "genres": ["intimate jazz"],
+        "category": "jazz"
+      },
+      {
+        "id": "b3529b00-bc44-406b-ae78-cb664dc58b5b",
+        "name": "Intimate Jazz — fi9AP0QdwxA",
+        "youtubeId": "fi9AP0QdwxA",
+        "genres": ["intimate jazz"],
+        "category": "jazz"
+      },
+      {
+        "id": "6a19d066-0d53-4a4f-acde-4d57be6a0b33",
+        "name": "Intimate Jazz — fLEnHFqOD-0",
+        "youtubeId": "fLEnHFqOD-0",
+        "genres": ["intimate jazz"],
+        "category": "jazz"
+      },
+      {
+        "id": "0cc46cc1-93b4-407f-b44d-4b1db7e63a98",
+        "name": "Intimate Jazz — QLNxHiCy6aY",
+        "youtubeId": "QLNxHiCy6aY",
+        "genres": ["intimate jazz"],
+        "category": "jazz"
+      },
+      {
+        "id": "1cc46cc1-93b4-407f-b44d-4b1db7e63a9a",
+        "name": "Gentlemen in Manhattan – 1940s Jazz",
+        "youtubeId": "RGvAAFM6ElY",
+        "genres": ["intimate jazz"],
+        "category": "jazz"
+      },
+      {
+        "id": "2ac46cc1-93b4-407f-b44d-4b1db7e63a9e",
+        "name": "Mellow Blues - Elegant Blues & Rock Instrumental Backdrops | Relaxing Blues Music",
+        "youtubeId": "1xGzqu5LRRw",
+        "genres": ["mellow Blues"],
+        "category": "blues"
+      },
+      {
+        "id": "3ac46cc1-93b4-407f-b44d-5b1db7e63a9e",
+        "name": "New York Swing Jazz Party | Vibrant 1920s Ballroom Vibes | Gatsby Lounge 🗽🎷",
+        "youtubeId": "v_LKGIA7BIA",
+        "genres": ["swing Jazz Party", "new york", "gatsby"],
+        "category": "jazz"
+      },
+      {
+        "id": "3ac46cc1-93b4-407f-e44d-3b1db7e63a9e",
+        "name": "1930 Jazz Music | Elegant Lounge Jazz & Gatsby Era Vibes",
+        "youtubeId": "TxTV3YF08g0",
+        "genres": ["swing Jazz Party", "new york", "1930s","gatsby"],
+        "category": "jazz"
+      },
+      {
+        "id": "2ac46cc1-93b4-407f-e44d-7b1db7e63a9e",
+        "name": "Swinging 1920s Music Mix - Cure Your Depression With Jazz Swing And Blues",
+        "youtubeId": "EqJSGL7fPBQ",
+        "genres": ["swing Jazz Party", "new york", "1930s","gatsby"],
+        "category": "jazz"
+      },
+      {
+        "id": "2ac46cc1-93b4-407f-e44d-7b1db7e63a9e",
+        "name": "Bourbon on the Rocks 🥃 | Smoky Retro Jazz for Late Nights",
+        "youtubeId": "MAHnXKxmkFM",
+        "genres": ["bar", "piano"],
+        "category": "jazz"
+      },
+      {
+        "id": "1ac46cc1-93b4-407f-e44d-7b1db7e63a9e",
+        "name": "Whiskey Lullaby (1950's Jazz Rework)",
+        "youtubeId": "yOhNGPFavls",
+        "genres": ["bar", "piano"],
+        "category": "jazz"
+      },
+      {
+        "id": "3ac46cc1-23b4-407f-e44d-7b1db7e63a9e",
+        "name": "First Goodbye | 1940's Retro Jazz",
+        "youtubeId": "yQspic8zeYA",
+        "genres": ["bar", "piano"],
+        "category": "jazz"
+      },
+      {
+        "id": "3ac46cc1-23b4-407f-e44d-7b1db7e63a9e",
+        "name": "When She Smiles | 1950's Vintage Jazz",
+        "youtubeId": "mGUSwEW4Tzw",
+        "genres": ["bar", "piano"],
+        "category": "jazz"
+      },
+      {
+        "id": "2bc46cc1-23b4-407f-e44d-7b1db7e63a9e",
+        "name": "Broken Notes at Midnight | Heartbreak Jazz & Late-Night Tears",
+        "youtubeId": "wdebu108F54",
+        "genres": ["bar", "piano"],
+        "category": "jazz"
+      },
+      {
+        "id": "3bc46cc1-23b4-407f-e44d-1b1db7e63a9e",
+        "name": "Love & Heartbreak Jazz Mix | Romantic & Melancholic Jazz Compilation",
+        "youtubeId": "hz3Xj4QJVP8",
+        "genres": ["bar", "piano"],
+        "category": "jazz"
+      },
+      {
+        "id": "4ac46cc1-93b4-407f-e5ad-3b1db7e63a9e",
+        "name": "Big Mama Thornton – Fire in My Veins (1953) [Lost Club Tapes] | Rare Female Blues Legend",
+        "youtubeId": "1b9Ds6hQChU",
+        "genres": ["Mama Thornton", "new orleans", "female vocalists"],
+        "category": "blues"
+      },
+      {
+        "id": "9ac46cc1-93b4-407f-e5ad-bb1db7e62a9e",
+        "name": "Big Mama Thornton – Iron in My Lullaby (1955) [Lost Club Tapes] | Rare Female Blues Legend",
+        "youtubeId": "aKO2WDsJq2Q",
+        "genres": ["Mama Thornton", "new orleans", "female vocalists"],
+        "category": "blues"
+      },
+      {
+        "id": "8ac46cc1-93b4-407f-e5ad-ac1db7e62a9e",
+        "name": "John Lee Hooker Style Blues | Hobo Blues • Tupelo • One Bourbon One Scotch One Beer (Full Session)",
+        "youtubeId": "d_ORQa4Iebc",
+        "genres": ["John Lee Hooker", "chicago", "male vocalists"],
+        "category": "blues"
+      },
+      {
+        "id": "3ac46cc1-93b4-407f-e5ad-xt1db7e62a9e",
+        "name": "DEEP Southern DELTA Blues - Mississippi Born Delta Blues With Gritty Slide Guitar",
+        "youtubeId": "19Fc1jDFegA",
+        "genres": ["mississippi ", "delta blues"],
+        "category": "blues"
+      },
+      {
+        "id": "2bc42cc1-93b4-407f-e5ad-xt1db7e62a9e",
+        "name": "Delta Blues and Poker",
+        "youtubeId": "YD5iYr1C2Gs",
+        "genres": ["mississippi ", "delta blues"],
+        "category": "blues"
+      },
+      {
+        "id": "2bd42cc1-93b4-407f-e5ad-xt1db7e62a9e",
+        "name": "Playlist For Men Who Dominate Quietly | Dark blues songs with Gentleman style",
+        "youtubeId": "Vrq2i14sr-0",
+        "genres": ["dark blues"],
+        "category": "blues"
+      },
+      {
+        "id": "2bd42cc1-93b4-407f-e5ad-xt1db7e62a9e",
+        "name": "Playlist For Men Who Move In Silence | Gentleman Dark Blues | Whiskey Bar Jazz Mix 2026",
+        "youtubeId": "7rjdhw1QMIE-0",
+        "genres": ["dark blues"],
+        "category": "blues"
+      },
+      {
+        "id": "2bd42cc1-93b4-407f-e5ad-xt1db7e62a9e",
+        "name": "Playlist make you feel like a mafia boss | Dark Gentleman Blues Songs",
+        "youtubeId": "37c6Qyc9ZZg",
+        "genres": ["dark blues"],
+        "category": "blues"
+      },
+      {
+        "id": "2bd42xc1-93b4-407f-a5ad-xt1db7e62a9e",
+        "name": "Music For Men Who Don't Need to Prove Anything | Gentleman Dark Blues",
+        "youtubeId": "4RoDSFfjVgA",
+        "genres": ["dark blues"],
+        "category": "blues"
+      },
+      {
+        "id": "1bd42cc1-93b4-407f-e5ad-xt1db7e62a9e",
+        "name": "Music for Men Who Don't Need to Speak |Gentleman Dark Blues",
+        "youtubeId": "zBft2esVgKg",
+        "genres": ["dark blues"],
+        "category": "blues"
+      },
+      {
+        "id": "3bd42cc1-93b4-407f-e5ad-xt1db7e62a9a",
+        "name": "Gentleman Songs 🎙️ Dark Blues Rock | Peaky Blinders Style Mix by Noavé",
+        "youtubeId": "fojbo2uF3Qc",
+        "genres": ["dark blues"],
+        "category": "blues"
+      },
+      {
+        "id": "3bd42cc1-93b4-407f-e5ad-xt1db7e62a9a",
+        "name": "Vintage Delta Blues Fingerstyle | Atmospheric 1930s Juke Joint Guitar",
+        "youtubeId": "MN1-G_4tuEY",
+        "genres": ["delta blues", "robert johnson", "mississippi"],
+        "category": "blues"
+      },
+      {
+        "id": "3bd42cc1-93b4-407f-e5ad-xt1db7e62a9a",
+        "name": "Robert Johnson & Son House – Devils & Prophets (1936) [Delta Lost Sessions] | Rare Delta Blues",
+        "youtubeId": "fs24JVZ95B0",
+        "genres": ["delta blues", "robert johnson", "mississippi"],
+        "category": "blues"
+      },
+      {
+        "id": "3bd42cc1-93b4-407f-e5ad-xt1db7e62a9a",
+        "name": "My Dog Left Too | Robert Johnson Style",
+        "youtubeId": "hdWuPg5uyGs",
+        "genres": ["delta blues", "robert johnson", "mississippi", "sad"],
+        "category": "blues"
+      },
+      {
+        "id": "3bd42cc1-93b4-407f-e5ad-xt1db7e62a9a",
+        "name": "Deep Southern Blues – Música para uma Alma Quebrada",
+        "youtubeId": "bg3RFpl0nkw",
+        "genres": ["sad","Deep Southern Blues"],
+        "category": "blues"
+      },
+      {
+        "id": "3bd42cc1-93b4-407f-e5ad-xt1db7e62a9a",
+        "name": "Slicked Blues: Raw, gritty blues with a warm touch",
+        "youtubeId": "6sS9A1gXFBc",
+        "genres": ["sad","mississippi","harmonica"],
+        "category": "blues"
+      },
+      {
+        "id": "3bd42cc1-93b4-407f-e5ad-xt1db7e62a9a",
+        "name": "Deep Southern Blues - A Melhor Música Instrumental de Blues",
+        "youtubeId": "sVsaehrSJxY",
+        "genres": ["sad","Deep Southern Blues", "mississippi "],
+        "category": "blues"
+      },
+      {
+        "id": "3bd42cc1-93b4-407f-e5ad-xt1db7e62a9a",
+        "name": "Deep Southern Blues - A Melhor Música Instrumental de Blues",
+        "youtubeId": "1w7B17vIYQA",
+        "genres": ["sad","Deep Southern Blues", "mississippi "],
+        "category": "blues"
+      },
+      {
+        "id": "3bd42cc1-93b4-407f-e5ad-xt1db7e62a9a",
+        "name": "Dirty Blues - Soul-Stirring the Haunting Melodies and Lyrics of Blues Music | Mystical Blues Journey",
+        "youtubeId": "nqZd2o_cAYw",
+        "genres": ["dirty blues"],
+        "category": "blues"
+      },
+      {
+        "id": "3bd42cc1-93b4-407f-e5ad-xt1db7e62a9a",
+        "name": "Dirty Blues - Soul-Stirring the Haunting Melodies and Lyrics of Blues Music | Mystical Blues Journey",
+        "youtubeId": "nqZd2o_cAYw",
+        "genres": ["dirty blues"],
+        "category": "blues"
+      },
+      {
+        "id": "3bd42cc1-93b4-407f-e5ad-xt1db7e62a9a",
+        "name": "Dirty Blues - Dive into the Depths of Dirty Blues | Relax with Rock Instrumentals",
+        "youtubeId": "48lN7bPnJkQ",
+        "genres": ["dirty blues"],
+        "category": "blues"
+      },
+      {
+        "id": "3bd42cc1-93b4-407f-e5ad-xt1db7e62a9a",
+        "name": "Dirty Blues Rock - Best of Slow Whiskey Blues Music to Relax, Study and Work - Bourbon Elegant Blues",
+        "youtubeId": "IhM4mINiEtg",
+        "genres": ["dirty blues", "slow"],
+        "category": "blues"
+      },
+      {
+        "id": "3bd42cc1-93b4-407f-e5ad-xt1db7e62a9a",
+        "name": "Smooth Blues - Traditional Sounds to Capture the Essence of Blues Music",
+        "youtubeId": "85AZkC6RlkE",
+        "genres": ["dirty blues", "slow"],
+        "category": "blues"
+      }
+]

@@ -1,0 +1,22 @@
+/* Just Jazz — Header */
+
+.header {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #8b3a2e 0%, #c45c3e 50%, #d4a574 100%);
+  padding: 0.75rem 1rem 0.875rem;
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+}
+
+.header__title {
+  margin: 0 0 0.1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+.header__greeting {
+  margin: 0;
+  font-size: 0.75rem;
+  opacity: 0.9;
+}

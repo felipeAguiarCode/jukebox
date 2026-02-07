@@ -1,0 +1,21 @@
+:root {
+  --color-bg: #0d0d0f;
+  --color-bg-elevated: #16161a;
+  --color-surface: #1e1e24;
+  --color-text: #f5f5f5;
+  --color-text-muted: #a0a0a8;
+  --color-accent: #c45c3e;
+  --color-accent-hover: #d96a4a;
+  --color-blues: #2d4a6e;
+  --color-jazz: #8b5a3c;
+  --color-soul: #6b4c7a;
+  --color-bop: #3d5a4c;
+  --font-main: 'IBM Plex Sans', system-ui, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  --nav-height: 72px;
+  --now-playing-height: 56px;
+  --safe-bottom: env(safe-area-inset-bottom, 0);
+}

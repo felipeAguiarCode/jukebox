@@ -1,0 +1,12 @@
+/* Just Jazz — App layout */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  padding-bottom: var(--nav-height);
+}
+
+ body.has-now-playing .app {
+  padding-bottom: calc(var(--nav-height) + var(--now-playing-height));
+}

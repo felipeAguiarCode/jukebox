@@ -18,6 +18,7 @@
         disablekb: 1,
         fs: 0,
         modestbranding: 1,
+        playsinline: 1,
         rel: 0,
         showinfo: 0
       },
@@ -54,6 +55,16 @@
     }
   }
 
+  function prime() {
+    if (!player || !currentVideoId) return;
+    // Desbloqueia contexto de áudio iOS dentro do gesto do usuário.
+    // playVideo() + pauseVideo() com delay registra o player sem iniciar de fato.
+    player.playVideo();
+    setTimeout(function () {
+      if (!shouldPlay) player.pauseVideo();
+    }, 200);
+  }
+
   function play() {
     shouldPlay = true;
     if (player && currentVideoId) player.playVideo();
@@ -68,6 +79,7 @@
     onAPIReady: onAPIReady,
     setSound: setSound,
     setVolume: setVolume,
+    prime: prime,
     play: play,
     pause: pause
   };

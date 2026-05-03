@@ -87,6 +87,7 @@
     JustJazzPlayer.setPlaylist(list, index >= 0 ? index : 0);
     JustJazzPlayer.loadTrack(track);
     JustJazzPlayer.play();
+    JustJazzRainPlayer.prime();
     JustJazzPlaying.updateUI(track);
     JustJazzPlaying.updateProgress(0, 0);
     JustJazzPlaying.setPlayPauseIcon(true);
@@ -205,6 +206,7 @@
           var willBePlaying = state !== 1;
           JustJazzPlaying.setPlayPauseIcon(willBePlaying);
           JustJazzNowPlayingBar.setPlayPauseIcon(willBePlaying);
+          if (willBePlaying) JustJazzRainPlayer.prime();
           JustJazzPlayer.togglePlayPause();
         },
         function () {

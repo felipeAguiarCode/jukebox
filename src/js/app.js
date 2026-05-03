@@ -33,11 +33,15 @@
       var nav = link.getAttribute('data-nav');
       var isActive = (nav === ROUTES.HOME && screenId === ROUTES.HOME) ||
         (nav === ROUTES.SEARCH && screenId === ROUTES.SEARCH) ||
-        (nav === ROUTES.QUEUE && screenId === ROUTES.QUEUE);
+        (nav === ROUTES.QUEUE && screenId === ROUTES.QUEUE) ||
+        (nav === ROUTES.SETTINGS && screenId === ROUTES.SETTINGS);
       link.classList.toggle('nav__link--active', !!isActive);
       link.setAttribute('aria-current', isActive ? 'page' : null);
     });
   }
+
+  function getTracksRef() { return tracks; }
+  function setTracksRef(t) { tracks = t; }
 
   var currentPlaylistMood = { moodId: null, moodType: null };
   var currentPlaylistSort = 'az';
@@ -121,6 +125,8 @@
           var queue = JustJazzPlayer.getPlaylist();
           playTrack(track, queue.length > 0 ? queue : null);
         });
+      } else if (nav === ROUTES.SETTINGS) {
+        showScreen(ROUTES.SETTINGS);
       }
       return;
     }
@@ -214,6 +220,14 @@
           showScreen(ROUTES.PLAYING);
         }
       );
+
+      JustJazzNowPlayingBar.initRainPicker(function (rainSound) {
+        JustJazzRainPlayer.setSound(rainSound.videoId);
+        if (JustJazzYouTubeClient.getPlayerState() === 1) JustJazzRainPlayer.play();
+        JustJazzNowPlayingBar.setRainActive(rainSound.id !== 'none');
+      });
+
+      JustJazzSettings.init({ getTracks: getTracksRef, setTracks: setTracksRef });
     });
 
     document.addEventListener('click', delegateClick);

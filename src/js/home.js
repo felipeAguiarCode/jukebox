@@ -118,6 +118,9 @@
     var circles = document.querySelectorAll('.moods__carousel--circles');
     if (cards) cards.scrollLeft = 0;
     circles.forEach(function (c) { c.scrollLeft = 0; });
+    document.querySelectorAll('.moods--circles').forEach(function (s) {
+      s.classList.remove('moods--circles--visible');
+    });
   }
 
   function initCarouselDrag(container) {
@@ -179,10 +182,25 @@
     }, true);
   }
 
+  function initSectionAnimations() {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('moods--circles--visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.moods--circles').forEach(function (section) {
+      observer.observe(section);
+    });
+  }
+
   function init(tracks) {
     render(tracks);
     initCarouselDrag(document.querySelector('.moods__carousel--cards'));
     document.querySelectorAll('.moods__carousel--circles').forEach(initCarouselDrag);
+    initSectionAnimations();
   }
 
   window.JustJazzHome = { init, render, resetCarouselScrolls };

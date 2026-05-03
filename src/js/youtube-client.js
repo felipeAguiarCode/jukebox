@@ -55,6 +55,7 @@
         }
       }
     });
+    if (window.JustJazzRainPlayer) JustJazzRainPlayer.onAPIReady();
   }
 
   window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
@@ -84,6 +85,10 @@
     if (ytPlayer && ytPlayer.seekTo) ytPlayer.seekTo(seconds);
   }
 
+  function setVolume(value) {
+    if (ytPlayer && ytPlayer.setVolume) ytPlayer.setVolume(value);
+  }
+
   function getPlayerState() {
     return ytPlayer && ytPlayer.getPlayerState ? ytPlayer.getPlayerState() : -1;
   }
@@ -110,6 +115,7 @@
     pause: pause,
     stop: stop,
     seekTo: seekTo,
+    setVolume: setVolume,
     getPlayerState: getPlayerState,
     getCurrentTime: getCurrentTime,
     getDuration: getDuration,

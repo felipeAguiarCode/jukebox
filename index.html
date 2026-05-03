@@ -4,13 +4,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- title -->
   <title>Jazzify — Blues & Jazz</title>
+
+  <!-- fonts -->
   <link rel="icon" href="src/assets/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="src/css/main.css">
+
+  <!-- styles -->
+  <link rel="stylesheet" href="src/css/colors/variables.css">
+  <link rel="stylesheet" href="src/css/layouts/base.css">
+  <link rel="stylesheet" href="src/css/layouts/app.css">
+  <link rel="stylesheet" href="src/css/layouts/header.css">
+  <link rel="stylesheet" href="src/css/layouts/main.css">
+  <link rel="stylesheet" href="src/css/layouts/nav.css">
+  <link rel="stylesheet" href="src/css/layouts/screen.css">
+  <link rel="stylesheet" href="src/css/screens/moods.css">
+  <link rel="stylesheet" href="src/css/screens/playlist.css">
+  <link rel="stylesheet" href="src/css/screens/search.css">
+  <link rel="stylesheet" href="src/css/screens/queue.css">
+  <link rel="stylesheet" href="src/css/screens/track-list.css">
+  <link rel="stylesheet" href="src/css/screens/player.css">
+  <link rel="stylesheet" href="src/css/screens/settings.css">
+  <link rel="stylesheet" href="src/css/components/now-playing-bar.css">
+  <link rel="stylesheet" href="src/css/components/toast.css">
+  <link rel="stylesheet" href="src/css/animations/entrance.css">
+  <link rel="stylesheet" href="src/css/responsive/breakpoints.css">
 </head>
 
 <body>
@@ -100,6 +123,122 @@
         <ul class="track-list track-list--queue" role="list" data-queue-list>
           <!-- Populated by JS -->
         </ul>
+      </section>
+
+      <section class="screen screen--settings" data-screen-id="settings" hidden>
+        <header class="settings__header">
+          <h1 class="settings__title">Settings</h1>
+        </header>
+        <div class="settings__body">
+          <section class="settings__group" aria-labelledby="settings-general-volume">
+            <h2 class="settings__group-title" id="settings-general-volume">General Volume</h2>
+            <div class="settings__item">
+              <label class="settings__label" for="vol-music">Music</label>
+              <div class="settings__control">
+                <input class="settings__range" type="range" id="vol-music"
+                  min="0" max="100" value="100" data-settings="vol-music" aria-label="Music volume">
+                <span class="settings__value" data-settings-val="vol-music">100%</span>
+              </div>
+            </div>
+            <div class="settings__item">
+              <label class="settings__label" for="vol-rain">Rain</label>
+              <div class="settings__control">
+                <input class="settings__range" type="range" id="vol-rain"
+                  min="0" max="100" value="80" data-settings="vol-rain" aria-label="Rain volume">
+                <span class="settings__value" data-settings-val="vol-rain">80%</span>
+              </div>
+            </div>
+          </section>
+          <section class="settings__group" aria-labelledby="settings-music-repo">
+            <h2 class="settings__group-title" id="settings-music-repo">Music Repo</h2>
+
+            <div class="settings__item settings__item--action">
+              <button class="settings__action-btn" type="button" data-repo-action="copy-repo">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                Copy active repo collection
+              </button>
+            </div>
+
+            <div class="settings__item settings__item--action">
+              <button class="settings__action-btn settings__action-btn--primary" type="button"
+                data-repo-action="add-video" aria-expanded="false">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="16"></line>
+                  <line x1="8" y1="12" x2="16" y2="12"></line>
+                </svg>
+                Add video
+              </button>
+            </div>
+
+            <!-- Add video inline panel -->
+            <div class="settings__add-panel" data-repo-add-panel hidden>
+              <div class="settings__field">
+                <label class="settings__field-label" for="repo-yt-url">YouTube URL or ID</label>
+                <div class="settings__field-row">
+                  <input class="settings__input" type="text" id="repo-yt-url"
+                    placeholder="https://youtube.com/watch?v=..." data-repo="yt-url" autocomplete="off">
+                  <button class="settings__fetch-btn" type="button" data-repo-action="fetch-meta">Fetch</button>
+                </div>
+              </div>
+              <div class="settings__field">
+                <label class="settings__field-label" for="repo-name">Name</label>
+                <input class="settings__input" type="text" id="repo-name"
+                  placeholder="Auto-fetched from YouTube" data-repo="name">
+              </div>
+              <div class="settings__field">
+                <label class="settings__field-label" for="repo-category">Category</label>
+                <select class="settings__select" id="repo-category" data-repo="category">
+                  <!-- Populated by JS -->
+                </select>
+              </div>
+              <div class="settings__field">
+                <span class="settings__field-label">Genres</span>
+                <div class="settings__genre-tags" data-repo="genres">
+                  <!-- Populated by JS -->
+                </div>
+              </div>
+              <div class="settings__panel-actions">
+                <button class="settings__action-btn settings__action-btn--ghost"
+                  type="button" data-repo-action="cancel-add">Cancel</button>
+                <button class="settings__action-btn settings__action-btn--confirm"
+                  type="button" data-repo-action="confirm-add">Add</button>
+              </div>
+            </div>
+
+            <div class="settings__item settings__item--action">
+              <button class="settings__action-btn" type="button" data-repo-action="download-repo">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Download actual repo
+              </button>
+            </div>
+
+            <div class="settings__item settings__item--action">
+              <label class="settings__action-btn settings__action-btn--upload" for="repo-upload">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                Upload a repo
+              </label>
+              <input class="settings__file-input" type="file" id="repo-upload"
+                accept=".json" data-repo-action="upload-repo">
+            </div>
+          </section>
+
+        </div>
       </section>
 
       <section class="screen screen--playing" data-screen-id="playing" hidden>
@@ -193,6 +332,7 @@
           </div>
         </div>
         <div id="youtube-player" class="youtube-player" aria-hidden="true"></div>
+        <div id="rain-player" aria-hidden="true"></div>
       </section>
     </main>
 
@@ -240,6 +380,12 @@
               <path d="M21 12v-4l-4 4 4 4v-4" />
             </svg>
           </button>
+          <div class="now-playing-bar__rain-wrap">
+            <button class="now-playing-bar__btn now-playing-bar__btn--rain" type="button"
+              aria-label="Som de chuva" data-action="mini-rain"
+              aria-expanded="false" aria-haspopup="listbox">🌧️</button>
+            <ul class="now-playing-bar__rain-list" role="listbox" aria-label="Sons de chuva" hidden></ul>
+          </div>
           <button class="now-playing-bar__btn now-playing-bar__btn--stop" type="button" aria-label="Parar música"
             data-action="mini-stop">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -273,6 +419,14 @@
         </svg>
         <span class="nav__label">Queue</span>
       </a>
+      <a class="nav__link" href="#settings" data-nav="settings" aria-label="Settings">
+        <svg class="nav__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="3" />
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+        </svg>
+        <span class="nav__label">Settings</span>
+      </a>
       <a class="nav__link" href="https://github.com/felipeAguiarCode" target="_blank" rel="noopener noreferrer"
         aria-label="Creator">
         <svg class="nav__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -285,17 +439,19 @@
     </nav>
   </div>
 
-  <script src="src/js/constants.js"></script>
-  <script src="src/js/toast.js"></script>
-  <script src="src/js/youtube-client.js"></script>
-  <script src="src/js/player.js"></script>
-  <script src="src/js/now-playing-bar.js"></script>
-  <script src="src/js/home.js"></script>
-  <script src="src/js/playlist.js"></script>
-  <script src="src/js/search.js"></script>
-  <script src="src/js/queue.js"></script>
-  <script src="src/js/playing.js"></script>
-  <script src="src/js/app.js"></script>
+  <script defer src="src/js/constants.js"></script>
+  <script defer src="src/js/toast.js"></script>
+  <script defer src="src/js/youtube-client.js"></script>
+  <script defer src="src/js/player.js"></script>
+  <script defer src="src/js/now-playing-bar.js"></script>
+  <script defer src="src/js/home.js"></script>
+  <script defer src="src/js/playlist.js"></script>
+  <script defer src="src/js/search.js"></script>
+  <script defer src="src/js/queue.js"></script>
+  <script defer src="src/js/playing.js"></script>
+  <script defer src="src/js/rain-player.js"></script>
+  <script defer src="src/js/settings.js"></script>
+  <script defer src="src/js/app.js"></script>
   <script src="https://www.youtube.com/iframe_api"></script>
 </body>
 

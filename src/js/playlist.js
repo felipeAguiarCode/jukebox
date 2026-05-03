@@ -40,7 +40,7 @@
       : '';
     li.innerHTML =
       '<div class="track-list__artwork">' +
-      '<img src="' + escapeHtml(thumbUrl) + '" alt="">' +
+      '<img src="' + escapeHtml(thumbUrl) + '" alt="" loading="lazy">' +
       '</div>' +
       '<div class="track-list__info">' +
       '<h4 class="track-list__name">' + escapeHtml(track.name) + '</h4>' +
@@ -88,12 +88,53 @@
     renderTracks(listEl, sorted, onTrackSelect, onAddToQueue);
   }
 
+  var PAGE_SIZE = 15;
+  var currentObserver = null;
+
   function renderTracks(listEl, tracks, onTrackSelect, onAddToQueue) {
     if (!listEl) return;
+    if (currentObserver) {
+      currentObserver.disconnect();
+      currentObserver = null;
+    }
     listEl.innerHTML = '';
-    tracks.forEach(function (track) {
-      listEl.appendChild(renderTrackItem(track, onTrackSelect, onAddToQueue));
-    });
+    if (tracks.length === 0) return;
+
+    var offset = 0;
+    var root = document.querySelector('.main');
+
+    currentObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          currentObserver.unobserve(entry.target);
+          loadBatch();
+        }
+      });
+    }, { root: root, threshold: 0 });
+
+    function loadBatch() {
+      var sentinel = listEl.querySelector('.track-list__sentinel');
+      if (sentinel) sentinel.remove();
+
+      var batch = tracks.slice(offset, offset + PAGE_SIZE);
+      batch.forEach(function (track) {
+        listEl.appendChild(renderTrackItem(track, onTrackSelect, onAddToQueue));
+      });
+      offset += batch.length;
+
+      if (offset < tracks.length) {
+        var newSentinel = document.createElement('li');
+        newSentinel.className = 'track-list__sentinel';
+        newSentinel.setAttribute('aria-hidden', 'true');
+        listEl.appendChild(newSentinel);
+        currentObserver.observe(newSentinel);
+      } else {
+        currentObserver.disconnect();
+        currentObserver = null;
+      }
+    }
+
+    loadBatch();
   }
 
   window.JustJazzPlaylist = { render, renderTracks };

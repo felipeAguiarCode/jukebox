@@ -99,3 +99,8 @@
 .track-list__play:active {
   transform: scale(0.92);
 }
+
+.track-list__sentinel {
+  height: 1px;
+  visibility: hidden;
+}

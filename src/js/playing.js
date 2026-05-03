@@ -4,11 +4,20 @@
 (function () {
   var formatMoodName = JUST_JAZZ.formatMoodName;
 
+  // DOM cache — scripts run deferred, DOM is available at IIFE time
+  var artworkEl    = document.querySelector('[data-player-artwork]');
+  var trackEl      = document.querySelector('[data-player-track]');
+  var youtubeLinkEl = document.querySelector('[data-player-youtube-link]');
+  var channelEl    = document.querySelector('[data-player-channel]');
+  var barFillEl    = document.querySelector('[data-player-bar-fill]');
+  var barThumbEl   = document.querySelector('[data-player-bar-thumb]');
+  var currentTimeEl = document.querySelector('[data-player-current]');
+  var totalTimeEl  = document.querySelector('[data-player-total]');
+  var playerScreenEl = document.querySelector('[data-screen-id="playing"]');
+  var recordEl     = artworkEl ? artworkEl.querySelector('.player__artwork-record') : null;
+
   function updateUI(track) {
-    const trackEl = document.querySelector('[data-player-track]');
-    const artworkEl = document.querySelector('[data-player-artwork]');
-    const img = artworkEl ? artworkEl.querySelector('img') : null;
-    const youtubeLink = document.querySelector('[data-player-youtube-link]');
+    var img = artworkEl ? artworkEl.querySelector('img') : null;
 
     if (trackEl) {
       var inner = trackEl.querySelector('.player__track-inner');
@@ -23,7 +32,6 @@
         inner.classList.toggle('player__track-inner--scroll', name.length > 20);
       }
     }
-    var channelEl = document.querySelector('[data-player-channel]');
     if (channelEl) {
       channelEl.textContent = '';
       channelEl.href = '#';
@@ -33,22 +41,17 @@
       img.src = JustJazzPlayer.getThumbUrl(track.youtubeId);
       img.alt = track.name;
     }
-    if (youtubeLink && track.youtubeId) {
-      youtubeLink.href = JustJazzYouTubeClient.getVideoUrl(track.youtubeId);
+    if (youtubeLinkEl && track.youtubeId) {
+      youtubeLinkEl.href = JustJazzYouTubeClient.getVideoUrl(track.youtubeId);
     }
   }
 
   function updateProgress(current, total) {
-    var barFill = document.querySelector('[data-player-bar-fill]');
-    var barThumb = document.querySelector('[data-player-bar-thumb]');
-    var currentEl = document.querySelector('[data-player-current]');
-    var totalEl = document.querySelector('[data-player-total]');
     var pct = total > 0 ? (current / total * 100) : 0;
-
-    if (barFill) barFill.style.width = pct + '%';
-    if (barThumb) barThumb.style.left = pct + '%';
-    if (currentEl) currentEl.textContent = formatTime(current);
-    if (totalEl) totalEl.textContent = formatTime(total);
+    if (barFillEl) barFillEl.style.width = pct + '%';
+    if (barThumbEl) barThumbEl.style.left = pct + '%';
+    if (currentTimeEl) currentTimeEl.textContent = formatTime(current);
+    if (totalTimeEl) totalTimeEl.textContent = formatTime(total);
   }
 
   function formatTime(seconds) {
@@ -58,25 +61,22 @@
   }
 
   function setArtworkSpin(isPlaying) {
-    var artwork = document.querySelector('[data-player-artwork]');
-    if (!artwork) return;
+    if (!artworkEl) return;
     if (isPlaying) {
-      artwork.classList.add('player__artwork--playing');
+      artworkEl.classList.add('player__artwork--playing');
     } else {
-      artwork.classList.remove('player__artwork--playing');
+      artworkEl.classList.remove('player__artwork--playing');
     }
   }
 
   function triggerNeedleDrop() {
-    var artwork = document.querySelector('[data-player-artwork]');
-    if (!artwork) return;
-    artwork.classList.remove('player__artwork--needle-drop');
-    void artwork.offsetWidth;
-    artwork.classList.add('player__artwork--needle-drop');
+    if (!artworkEl) return;
+    artworkEl.classList.remove('player__artwork--needle-drop');
+    void artworkEl.offsetWidth;
+    artworkEl.classList.add('player__artwork--needle-drop');
   }
 
   function updateChannelName(channelName, videoId) {
-    var channelEl = document.querySelector('[data-player-channel]');
     if (channelEl) {
       channelEl.textContent = channelName ? 'Channel on YouTube: ' + channelName : '';
       channelEl.style.display = channelName ? 'inline' : 'none';
@@ -90,12 +90,11 @@
   }
 
   function setPlayPauseIcon(isPlaying) {
-    var playerScreen = document.querySelector('[data-screen-id="playing"]');
-    if (!playerScreen) return;
+    if (!playerScreenEl) return;
     setArtworkSpin(isPlaying);
-    var playIcon = playerScreen.querySelector('.player__icon-play');
-    var pauseIcon = playerScreen.querySelector('.player__icon-pause');
-    var playBtn = playerScreen.querySelector('[data-action="play-pause"]');
+    var playIcon = playerScreenEl.querySelector('.player__icon-play');
+    var pauseIcon = playerScreenEl.querySelector('.player__icon-pause');
+    var playBtn = playerScreenEl.querySelector('[data-action="play-pause"]');
     if (playIcon) {
       if (isPlaying) {
         playIcon.setAttribute('hidden', '');
@@ -128,6 +127,10 @@
       var isPlaying = state === 1;
       var hasTrack = (state >= 1 && state <= 5) && JustJazzPlayer.getCurrentTrack();
       setPlayPauseIcon(isPlaying);
+      if (window.JustJazzRainPlayer) {
+        if (isPlaying) JustJazzRainPlayer.play();
+        else JustJazzRainPlayer.pause();
+      }
       if (state === 5 || state === 1) {
         var track = JustJazzPlayer.getCurrentTrack();
         var data = JustJazzYouTubeClient.getVideoData();
@@ -165,17 +168,15 @@
       JustJazzPlayer.togglePlayPause();
     });
 
-      function triggerSeekAnimation(seekForward) {
-      var record = document.querySelector('.player__artwork-record');
-      var artwork = document.querySelector('[data-player-artwork]');
-      if (record && artwork) {
-        artwork.classList.remove('player__artwork--playing');
-        record.classList.remove('player__artwork-record--seek-forward', 'player__artwork-record--seek-backward');
-        void record.offsetWidth;
-        record.classList.add(seekForward ? 'player__artwork-record--seek-forward' : 'player__artwork-record--seek-backward');
+    function triggerSeekAnimation(seekForward) {
+      if (recordEl && artworkEl) {
+        artworkEl.classList.remove('player__artwork--playing');
+        recordEl.classList.remove('player__artwork-record--seek-forward', 'player__artwork-record--seek-backward');
+        void recordEl.offsetWidth;
+        recordEl.classList.add(seekForward ? 'player__artwork-record--seek-forward' : 'player__artwork-record--seek-backward');
         setTimeout(function () {
-          record.classList.remove('player__artwork-record--seek-forward', 'player__artwork-record--seek-backward');
-          if (JustJazzYouTubeClient.getPlayerState() === 1) artwork.classList.add('player__artwork--playing');
+          recordEl.classList.remove('player__artwork-record--seek-forward', 'player__artwork-record--seek-backward');
+          if (JustJazzYouTubeClient.getPlayerState() === 1) artworkEl.classList.add('player__artwork--playing');
         }, 250);
       }
     }
@@ -208,11 +209,6 @@
 
     var progressBar = document.querySelector('[data-player-bar]');
     if (progressBar) {
-      var barFill = progressBar.querySelector('[data-player-bar-fill]');
-      var barThumb = progressBar.querySelector('[data-player-bar-thumb]');
-      var currentEl = progressBar.closest('.player__progress')?.querySelector('[data-player-current]');
-      var totalEl = progressBar.closest('.player__progress')?.querySelector('[data-player-total]');
-
       function getPctFromEvent(e) {
         var clientX = e.touches ? e.touches[0].clientX : e.clientX;
         var rect = progressBar.getBoundingClientRect();
@@ -221,9 +217,9 @@
 
       function applyProgress(pct, duration) {
         var w = pct * 100;
-        if (barFill) barFill.style.width = w + '%';
-        if (barThumb) barThumb.style.left = w + '%';
-        if (currentEl && duration) currentEl.textContent = formatTime(pct * duration);
+        if (barFillEl) barFillEl.style.width = w + '%';
+        if (barThumbEl) barThumbEl.style.left = w + '%';
+        if (currentTimeEl && duration) currentTimeEl.textContent = formatTime(pct * duration);
       }
 
       function startDrag(e) {

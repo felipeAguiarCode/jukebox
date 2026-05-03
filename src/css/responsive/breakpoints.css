@@ -7,8 +7,6 @@
 
 @media (min-width: 768px) {
   .main {
-    max-width: 600px;
-    margin: 0 auto;
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -19,24 +17,5 @@
     padding-left: 2.25rem;
     padding-right: 2rem;
     scroll-padding-inline-start: 2.25rem;
-  }
-
-  .header {
-    max-width: 600px;
-    margin: 0 auto;
-    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-  }
-
-  .now-playing-bar {
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 600px;
-  }
-
-  .nav {
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 600px;
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   }
 }

@@ -4,6 +4,9 @@
 (function () {
   var barEl = null;
   var trackEl = null;
+  var playIconEl = null;
+  var pauseIconEl = null;
+  var playBtnEl = null;
 
   function getEl() {
     if (!barEl) barEl = document.getElementById('now-playing-bar');
@@ -34,31 +37,31 @@
   }
 
   function setPlayPauseIcon(isPlaying) {
-    var bar = document.getElementById('now-playing-bar');
-    if (!bar) return;
-    var playIcon = bar.querySelector('.now-playing-bar__icon-play');
-    var pauseIcon = bar.querySelector('.now-playing-bar__icon-pause');
-    var playBtn = bar.querySelector('[data-action="mini-play-pause"]');
-    if (playIcon) {
+    if (!barEl) return;
+    if (playIconEl) {
       if (isPlaying) {
-        playIcon.setAttribute('hidden', '');
+        playIconEl.setAttribute('hidden', '');
       } else {
-        playIcon.removeAttribute('hidden');
+        playIconEl.removeAttribute('hidden');
       }
     }
-    if (pauseIcon) {
+    if (pauseIconEl) {
       if (isPlaying) {
-        pauseIcon.removeAttribute('hidden');
+        pauseIconEl.removeAttribute('hidden');
       } else {
-        pauseIcon.setAttribute('hidden', '');
+        pauseIconEl.setAttribute('hidden', '');
       }
     }
-    if (playBtn) playBtn.setAttribute('aria-label', isPlaying ? 'Pausar' : 'Reproduzir');
+    if (playBtnEl) playBtnEl.setAttribute('aria-label', isPlaying ? 'Pausar' : 'Reproduzir');
   }
 
   function init(onRewind, onPrev, onNext, onForward, onPlayPause, onStop, onBarClick) {
     var el = getEl();
     if (!el.bar) return;
+
+    playIconEl = el.bar.querySelector('.now-playing-bar__icon-play');
+    pauseIconEl = el.bar.querySelector('.now-playing-bar__icon-pause');
+    playBtnEl = el.bar.querySelector('[data-action="mini-play-pause"]');
 
     hide();
 
@@ -84,11 +87,77 @@
     if (stopBtn) stopBtn.addEventListener('click', function (e) { e.stopPropagation(); if (onStop) onStop(); });
   }
 
+  var rainBtn = null;
+  var rainList = null;
+
+  function initRainPicker(onRainSelect) {
+    var bar = document.getElementById('now-playing-bar');
+    if (!bar) return;
+    rainBtn = bar.querySelector('[data-action="mini-rain"]');
+    rainList = bar.querySelector('.now-playing-bar__rain-list');
+    if (!rainBtn || !rainList) return;
+
+    var sounds = (window.JUST_JAZZ && window.JUST_JAZZ.RAIN_SOUNDS) || [];
+    sounds.forEach(function (sound) {
+      var li = document.createElement('li');
+      li.className = 'now-playing-bar__rain-item';
+      li.setAttribute('role', 'option');
+      li.setAttribute('data-rain-id', sound.id);
+      li.setAttribute('aria-selected', sound.id === 'none' ? 'true' : 'false');
+      li.textContent = sound.name;
+      if (sound.id === 'none') li.classList.add('now-playing-bar__rain-item--active');
+      li.addEventListener('click', function (e) {
+        e.stopPropagation();
+        rainList.querySelectorAll('.now-playing-bar__rain-item').forEach(function (el) {
+          el.classList.remove('now-playing-bar__rain-item--active');
+          el.setAttribute('aria-selected', 'false');
+        });
+        li.classList.add('now-playing-bar__rain-item--active');
+        li.setAttribute('aria-selected', 'true');
+        closeList();
+        if (onRainSelect) onRainSelect(sound);
+      });
+      rainList.appendChild(li);
+    });
+
+    rainBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = !rainList.hidden;
+      if (isOpen) closeList();
+      else openList();
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!rainList.hidden && rainBtn && !rainBtn.closest('.now-playing-bar__rain-wrap').contains(e.target)) {
+        closeList();
+      }
+    });
+  }
+
+  function openList() {
+    if (!rainList || !rainBtn) return;
+    rainList.hidden = false;
+    rainBtn.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeList() {
+    if (!rainList || !rainBtn) return;
+    rainList.hidden = true;
+    rainBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  function setRainActive(isActive) {
+    if (!rainBtn) rainBtn = document.querySelector('[data-action="mini-rain"]');
+    if (rainBtn) rainBtn.classList.toggle('is-active', !!isActive);
+  }
+
   window.JustJazzNowPlayingBar = {
     show: show,
     hide: hide,
     updateTrackName: updateTrackName,
     setPlayPauseIcon: setPlayPauseIcon,
-    init: init
+    init: init,
+    initRainPicker: initRainPicker,
+    setRainActive: setRainActive
   };
 })();

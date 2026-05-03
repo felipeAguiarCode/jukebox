@@ -1,21 +1,5 @@
 /* Just Jazz — Blues & Jazz
    BEM, mobile-first, IBM Plex Sans
-   Imports: colors → layouts → components → responsive
+   CSS files are loaded as parallel <link> tags in index.html.
+   Order: colors → layouts → components → responsive
 */
-
-@import url('colors/variables.css');
-@import url('layouts/base.css');
-@import url('layouts/app.css');
-@import url('layouts/header.css');
-@import url('layouts/main.css');
-@import url('layouts/nav.css');
-@import url('layouts/screen.css');
-@import url('screens/moods.css');
-@import url('screens/playlist.css');
-@import url('screens/search.css');
-@import url('screens/queue.css');
-@import url('screens/track-list.css');
-@import url('screens/player.css');
-@import url('components/now-playing-bar.css');
-@import url('components/toast.css');
-@import url('responsive/breakpoints.css');

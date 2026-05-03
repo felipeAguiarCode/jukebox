@@ -9,6 +9,12 @@
   var onTrackSelect = null;
   var onAddToQueue = null;
   var sortOrder = 'az';
+  var debouncedUpdateResults = null;
+
+  function debounce(fn, ms) {
+    var t;
+    return function () { clearTimeout(t); t = setTimeout(fn, ms); };
+  }
 
   function filterByQuery(query) {
     var q = (query || '').trim().toLowerCase();
@@ -66,8 +72,9 @@
     inputEl.value = '';
     updateResults();
 
-    inputEl.removeEventListener('input', updateResults);
-    inputEl.addEventListener('input', updateResults);
+    if (debouncedUpdateResults) inputEl.removeEventListener('input', debouncedUpdateResults);
+    debouncedUpdateResults = debounce(updateResults, 300);
+    inputEl.addEventListener('input', debouncedUpdateResults);
     inputEl.removeEventListener('keydown', focusHandler);
     inputEl.addEventListener('keydown', focusHandler);
   }
